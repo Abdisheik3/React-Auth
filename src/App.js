@@ -12,9 +12,9 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
-import PlayerCreate from './components/PlayerCreate'
-import PlayerIndex from './components/PlayerIndex'
-import PlayerShow from './components/PlayerShow'
+import PlayerCreate from './components/players/PlayerCreate'
+import PlayerIndex from './components/players/PlayerIndex'
+import PlayerShow from './components/players/PlayerShow'
 
 const App = () => {
 
@@ -81,9 +81,9 @@ const App = () => {
 		  <Route
             path='/players/:id'
             element={
-              <RequireAuth user={user}>
+              < >
                 <PlayerShow msgAlert={msgAlert} user={user} />
-              </RequireAuth>}
+              </>}
           />
 		    <Route
             path='/players'

@@ -1,11 +1,14 @@
+import React, { useState, useEffect } from 'react'
+import PlayerIndex from "./players/PlayerIndex"
+
 const Home = (props) => {
-	// const { msgAlert, user } = props
-	console.log('props in home', props)
+	const { msgAlert } = props
 
 	return (
-		<>
-			<h2>Home Page</h2>
-		</>
+		<div className='container-md'>
+			<h2>All the players</h2>
+			<PlayerIndex msgAlert={msgAlert}/>
+		</div>
 	)
 }
 

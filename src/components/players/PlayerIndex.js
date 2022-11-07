@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react' 
 import { Link } from 'react-router-dom'
-import { playerIndex } from '../api/player'
+import { playerIndex } from '../../api/player'
 
 const PlayerIndex = ({ user, msgAlert }) => {
 
@@ -18,12 +18,12 @@ const PlayerIndex = ({ user, msgAlert }) => {
                 variant: 'danger'
             })
         })
-    }, [ msgAlert, user])
+    }, [])
 
     const allPlayersJSX = allPlayers.map(player => {
         return (
             <Link to={player._id} key={player._id}>
-            <li>Name: {player.name} position: {player.position}</li>
+            <li>Name: {player.name} Position: {player.position}  </li>
             </Link>
         )
     })

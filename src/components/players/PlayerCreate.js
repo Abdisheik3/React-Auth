@@ -1,5 +1,5 @@
 import React, { useState } from 'react' 
-import { playerCreate } from '../api/player'
+import { playerCreate } from '../../api/player'
 
 const PlayerCreate = ({ user, msgAlert }) => {
 
@@ -37,12 +37,14 @@ const PlayerCreate = ({ user, msgAlert }) => {
 
     return (
 			<>
+            <h2>Name</h2>
 				<input
 					type='text'
 					value={player.name}
 					name='name'
 					onChange={handleChange}
 				/>
+            <h2>Position</h2>
 				<input
 					type='text'
 					value={player.position}

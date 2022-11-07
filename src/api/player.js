@@ -17,20 +17,14 @@ export const playerCreate = (data, user) => {
 export const playerIndex = (user) => {
 	return axios({
 		method: 'GET',
-		url: apiUrl + '/players',
-		headers: {
-			Authorization: `Token token=${user.token}`,
-		},
+		url: apiUrl + '/players'
 	})
 }
 
 export const playerShow = (user, id) => {
 	return axios({
 		method: 'GET',
-		url: apiUrl + '/players/' + id,
-		headers: {
-			Authorization: `Token token=${user.token}`,
-		},
+		url: apiUrl + '/players/' + id
 	})
 }
 

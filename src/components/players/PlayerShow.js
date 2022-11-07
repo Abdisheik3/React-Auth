@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react' 
 import { useParams, useNavigate } from 'react-router-dom'
-import { playerDelete, playerShow, playerUpdate } from '../api/player'
+import { playerDelete, playerShow, playerUpdate } from '../../api/player'
 import PlayerUpdate from './PlayerUpdate'
 
 const PlayerShow = ({ user, msgAlert }) => {
@@ -24,7 +24,7 @@ const PlayerShow = ({ user, msgAlert }) => {
                 variant: 'danger'
             })
         })
-    }, [user, msgAlert, id])
+    }, [])
 
     const toggleShowUpdate = () => {
         setIsUpdateShown(prevUpdateShown => !prevUpdateShown)
@@ -32,7 +32,7 @@ const PlayerShow = ({ user, msgAlert }) => {
 
     const handleChange = (event) => {
         // to keep the values as users input info 
-        // first spread the current player
+        // first spread the current Player
         // then comma and modify the key to the value you need
         setPlayer({...player, [event.target.name]: event.target.value})
     }
@@ -87,7 +87,7 @@ const PlayerShow = ({ user, msgAlert }) => {
     // }
 
     return (
-			<>
+			<div className='container-md'>
 				<h3>Name: {player.name}</h3>
 				<p>Position: {player.position}</p>
 				<button onClick={toggleShowUpdate}>Toggle Update</button>
@@ -99,7 +99,7 @@ const PlayerShow = ({ user, msgAlert }) => {
 					/>
 				)}
                 <button onClick={handleDeletePlayer} >Delete</button>
-			</>
+			</div>
 		)
 }
 
